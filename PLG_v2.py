@@ -6,18 +6,23 @@ incomes = []
 def expense():
     e_amount = int(input("Enter the amount :"))
     e_description = input("Enter the description :").lower()
+    e_category = input("Enter the catogery :").lower()
     expense_record = {
             "amount" : e_amount, 
-            "description" : e_description
+            "description" : e_description,
+            "category" : e_category
         }
     expenses.append(expense_record)
         
 def income():
     i_amount = int(input("Enter the amount :"))
     i_description = input("Enter the description :").lower()
+    i_category = input("Enter the catogery :").lower()
     income_record = {
             "amount" : i_amount,
-            "description" : i_description
+            "description" : i_description,
+            "category" : i_category
+
         }
     incomes.append(income_record)
 def balance():
@@ -33,10 +38,11 @@ def balance():
 def transactions():
     print("INCOME")
     for income in incomes:
-        print(income["description"],":",income["amount"])
+        print(income["description"], ":", income["amount"], "| Category:", income["category"])
+
     print("EXPENSE")
     for expense in expenses:
-        print(expense["description"],":",expense["amount"])
+        print(expense["description"], ":", expense["amount"], "| Category:", expense["category"])
 
 while True:
 
